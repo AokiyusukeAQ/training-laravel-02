@@ -5,6 +5,12 @@
     <div class="form-group">
         {{ Form::label('name', 'カテゴリー名：') }}
         {{ Form::text('name', null, ['class' => 'form-control']) }}
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                「カテゴリ」は必ず入力してください。
+            </div>
+        @endif
     </div>
     <div class="form-group">
         {{ Form::submit('登録', ['class' => 'btn btn-primary form-control']) }}
